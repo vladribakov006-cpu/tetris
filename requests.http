@@ -1,0 +1,50 @@
+### 1. Получить список всех комнат (GET)
+GET http://localhost:3000/api/rooms
+
+###
+
+### 2. Получить комнату по ID (GET)
+GET http://localhost:3000/api/rooms/1
+
+###
+
+### 3. Создать новую комнату Тетриса (POST)
+POST http://localhost:3000/api/rooms
+Content-Type: application/json
+
+{
+  "name": "Турнир Тетрис 2026",
+  "maxPlayers": 4,
+  "mode": "battle-royale"
+}
+
+###
+
+### 4. Обновить данные комнаты (PUT)
+PUT http://localhost:3000/api/rooms/1
+Content-Type: application/json
+
+{
+  "status": "playing",
+  "currentPlayers": 2
+}
+
+###
+
+### 5. Попробовать создать комнату с ошибкой валидации (POST -> 400 Bad Request)
+POST http://localhost:3000/api/rooms
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+###
+
+### 6. Удалить комнату (DELETE)
+DELETE http://localhost:3000/api/rooms/1
+
+###
+
+### 7. Проверить удаление (GET -> 404 Not Found)
+GET http://localhost:3000/api/rooms/1
